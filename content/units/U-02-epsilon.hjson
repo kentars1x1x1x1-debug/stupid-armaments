@@ -1,0 +1,141 @@
+name: Epsilon
+description: Defends the Origin core from enemies. Builds structures.
+
+flying: true
+mineSpeed: 12
+mineTier: 4
+speed: 3.8
+accel: 0.05
+lowAltitude: true
+drag: 0.04
+itemCapacity: 110
+health: 380
+fogRadius: 0
+rotateSpeed: 15
+armor: 1
+buildSpeed: 2
+engineOffset: 8
+engineSize: 5
+hitSize: 17
+
+abilities: [
+  {
+    type: StatusFieldAbility
+    reload: 1000
+    duration: 120
+    effect: overclock
+    range: 36
+  }
+  {
+    type: ShieldArcAbility
+    regen: 0.2
+    max: 480
+    cooldown: 350
+    y: 0
+    width: 3
+    radius: 17
+    angle: 120
+  }
+]
+
+weapons: [
+  {
+    top: false
+    reload: 9
+    mirror: true
+    rotate: false
+    x: 3
+    y: 6
+    shoot: {
+      type: shootPattern
+      shots: 1
+      shotDelay: 0
+    }
+    shootY: 0
+    bullet: {
+      type: BasicBulletType
+      ejectEffect: casing2
+      speed: 4
+      width: 6
+      damage: 11
+      height: 10
+      buildingDamageMultiplier: 0.01
+      shootEffect: shootSmall
+      lifetime: 70
+      homingPower: 0.05
+      homingRange: 65
+      pierce: true
+      pierceCap: 2
+    }
+  }
+  {
+    name: epsilon-barrel
+    top: false
+    reload: 12
+    mirror: true
+    rotate: false
+    x: 6
+    y: 0
+    shoot: {
+      type: shootPattern
+      shots: 1
+      shotDelay: 0
+    }
+    shootY: 0
+    bullet: {
+      type: BasicBulletType
+      ejectEffect: casing2
+      speed: 4
+      width: 6
+      damage: 11
+      height: 10
+      buildingDamageMultiplier: 0.01
+      shootEffect: shootSmall
+      lifetime: 70
+      homingPower: 0.05
+      homingRange: 65
+      pierce: true
+      pierceCap: 2
+    }
+  }
+  {
+    name: epsilon-missile
+    shootStatus: slow
+    shootStatusDuration: 240
+    reload: 80
+    alternate: false
+    mirror: true
+    rotate: true
+    shootSound: missile
+    x: 7
+    y: -6
+    shoot: {
+      type: shootPattern
+      shots: 1
+      shotDelay: 0
+    }
+    shootY: 0
+    bullet: {
+      type: MissileBulletType
+      damage: 15
+      makeFire: true
+      incendAmount: 5
+      incendSpread: 5
+      status: melting
+      statusDuration: 120
+      speed: 3.5
+      drag: -0.005
+      width: 10
+      height: 10
+      keepVelocity: false
+      splashDamageRadius: 18
+      splashDamage: 18
+      buildingDamageMultiplier: 0.01
+      hitEffect: blastExplosion
+      despawnEffect: blastExplosion
+      lifetime: 80
+      homingPower: 0.1
+      homingRange: 100
+    }
+  }
+]
