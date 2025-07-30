@@ -1,0 +1,58 @@
+type: ItemTurret
+name: Tremor
+description: Shoots high range artillery rounds at enemies. Meant for large crowds of ground units.
+size: 5
+
+requirements: [
+  copper/1
+]
+
+research: {
+  parent: ripple
+  objectives: [
+  ]
+}
+
+health: 50000
+shootY: -5
+category: turret
+reload: 340
+ammoPerShot: 20
+shake: 8
+recoil: 7
+range: 350
+minRange: 80
+
+ammoTypes: {
+  thorium: {
+    type: ArtilleryBulletType
+    effects: {
+    backColor: f595be
+    hitColor: f595be
+    trailColor: f595be
+    frontColor: ffffff
+    width: 21
+    height: 25
+    speed: 2
+    lifetime: 160
+    splashDamage: 280
+    splashDamageRadius: 60
+    fragBullets: 12
+    fragVelocityMin: 0.4
+    fragVelocityMax: 0.8
+    fragLifeMin: 0.7
+    fragLifeMax: 1
+    fragBullet: {
+      type: ArtilleryBulletType
+      backColor: f595be
+      hitColor: f595be
+      trailColor: f595be
+      frontColor: ffffff
+      width: 15
+      height: 15
+      splashDamageRadius: 40
+      splashDamage: 150
+      lifetime: 80
+    }
+  }
+}
